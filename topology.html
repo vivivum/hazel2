@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Topology &mdash; Hazel 2.0beta1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Hazel 2.0beta1 documentation" href="index.html"/>
+        <link rel="next" title="Programmatically" href="programmatically.html"/>
+        <link rel="prev" title="Configuration" href="configuration.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hazel
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Basic usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="synthesis.html">Synthesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inversion.html">Inversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Topology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#notation-and-conditions">Notation and conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="programmatically.html">Programmatically</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input.html">Input files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">Output files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphical.html">Graphical front-end</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prepareData.html">Data preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="equations.html">Basic Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ambiguities.html">Ambiguities in the Hanle effect in the saturation regime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="photospheric.html">List of photospheric lines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="refsys.html">The reference system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disclaimer.html">Disclaimer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hazel</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Topology</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/topology.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="topology"></span><div class="section" id="id1">
+<h1>Topology<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Hazel v2.0 allows the user to select the topology of the atmospheres generating a certain
+spectral region. The topology is fairly flexible, if some conditions that we
+described later are fulfilled. Note that the magnetic properties of different atmospheres
+(specially photospheres and chromospheres) are independent, so that the idea of
+topologies are used to fit blended lines and avoid artifacts. The relation between
+the physical properties of any atmospheric component has to be interpreted
+by the user.</p>
+<div class="section" id="notation-and-conditions">
+<h2>Notation and conditions<a class="headerlink" href="#notation-and-conditions" title="Permalink to this headline">¶</a></h2>
+<p>The symbol <span class="math notranslate">\(\to\)</span> is used to indicate that
+radiation passes from one set of atmospheres to the next, while the symbol <span class="math notranslate">\(+\)</span>
+indicates that the atmospheres are added with a filling factor. Atmospheres are
+ordered from deeper to shallower.</p>
+<p>The conditions are the following:</p>
+<ul class="simple">
+<li>If a photosphere is used, it must lie at the deepest order (in other words, they must be first in the topology). Photospheres have the Planck function at the deepest point as boundary condition.</li>
+<li>If a photosphere is not used, then the typical continuum at the observing angle is used as boundary condition.</li>
+<li>If a straylight contamination is present, it must be the last contribution because it is added with a filling factor with the light emerging from the rest of atmospheres.</li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>In this figure we represent four typical configurations, where atmospheres starting
+with <code class="docutils literal notranslate"><span class="pre">ph</span></code> are photospheres, the label <code class="docutils literal notranslate"><span class="pre">ch</span></code> is used for chromospheres, <code class="docutils literal notranslate"><span class="pre">te</span></code>
+is used for telluric contaminations and <code class="docutils literal notranslate"><span class="pre">st</span></code> is used for straylight contaminations.</p>
+<ul class="simple">
+<li><ol class="first loweralpha">
+<li><code class="docutils literal notranslate"><span class="pre">ph1</span> <span class="pre">-&gt;</span> <span class="pre">ch1</span> <span class="pre">-&gt;</span> <span class="pre">te1</span></code>: the light emerging from the photosphere is passed to the chromosphere and finally, absorbed by the telluric contamination. This is a typical configuration to invert the whole spectral region aroung 10830 <span class="math notranslate">\(\unicode{xC5}\)</span>.</li>
+</ol>
+</li>
+<li><ol class="first loweralpha" start="2">
+<li><code class="docutils literal notranslate"><span class="pre">ph1</span> <span class="pre">+</span> <span class="pre">ph2</span> <span class="pre">-&gt;</span> <span class="pre">ch1</span></code>: the light emerging from two photospheres is added with a filling factor and passed to the chromosphere. This might be used in a situation in which the photospheric signal is coming from non-resolved structures.</li>
+</ol>
+</li>
+<li><ol class="first loweralpha" start="3">
+<li><code class="docutils literal notranslate"><span class="pre">ch1</span> <span class="pre">-&gt;</span> <span class="pre">ch2</span></code>: the light emerging from a chromosphere enters another one. This might be used for cases in which two components are seen in the He I multiplet.</li>
+</ol>
+</li>
+<li><ol class="first loweralpha" start="4">
+<li><code class="docutils literal notranslate"><span class="pre">ph1</span> <span class="pre">-&gt;</span> <span class="pre">ch1</span> <span class="pre">+</span> <span class="pre">ch2</span> <span class="pre">-&gt;</span> <span class="pre">st1</span></code>: the light emerging from the photosphere is passed to two chromospheres, that are added at the end with a filling factor. Finally, everything is contaminated with straylight.</li>
+</ol>
+</li>
+</ul>
+<div class="figure">
+<img alt="_images/topology.png" src="_images/topology.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="programmatically.html" class="btn btn-neutral float-right" title="Programmatically" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="configuration.html" class="btn btn-neutral" title="Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Andres Asensio Ramos.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.0beta1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
